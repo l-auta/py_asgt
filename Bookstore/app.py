@@ -1,5 +1,5 @@
-from data import add_book, search_books, delete_book, update_book
-from database import add_book_db, view_books_db, delete_book_db, update_book_db
+from data import add_book, delete_book, update_book
+from database import add_book_db, view_books_db, delete_book_db, update_book_db, search_books_db
 
 def main():
     while True:
@@ -26,7 +26,7 @@ def main():
 
         elif choice == '3':
             title = input("Enter book title to search: ")
-            search_books(title)
+            search_books_db(title)
 
         elif choice == '4':
             title = input("Enter book title to update: ")
@@ -34,12 +34,12 @@ def main():
             new_author = input("Enter new book author: ")
             new_price = float(input("Enter new book price: "))
             new_quantity = int(input("Enter new book quantity: "))
-            update_book(title, new_title, new_author, new_price, new_quantity)
+            # update_book(title, new_title, new_author, new_price, new_quantity)
             update_book_db(title, new_title, new_author, new_price, new_quantity)
 
         elif choice == '5':
             title = input("Enter book title to delete: ")
-            delete_book(title)
+            # delete_book(title)
             delete_book_db(title)
 
         elif choice == '6':

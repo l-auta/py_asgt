@@ -22,13 +22,14 @@ def add_book(title, author, price, quantity):
 #         print("-" * 20)
 
 # function to get a book by its title 
-def search_books(title):
-    found_books = [book for book in books if book['title'] == title]
-    if not found_books:
-        print(f"No books found with title '{title}'.")
-    else:
-        for book in found_books:
-            print(f"Title: {book['title']}, Author: {book['author']}, Price: {book['price']}, Quantity: {book['quantity']}")
+# it is also done by the one in db 
+# def search_books(title):
+#     found_books = [book for book in books if book['title'] == title]
+#     if not found_books:
+#         print(f"No books found with title '{title}'.")
+#     else:
+#         for book in found_books:
+#             print(f"Title: {book['title']}, Author: {book['author']}, Price: {book['price']}, Quantity: {book['quantity']}")
 
 # delete a book 
 def delete_book(title):

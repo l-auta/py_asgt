@@ -31,6 +31,7 @@ def update_book_db(title, new_title, new_author, new_price, new_quantity):
     WHERE title = ?
     ''', (new_title, new_author, new_price, new_quantity, title))
     conn.commit()
+    print(f"Book '{title}' updated successfully in the database.")
 
 # delete the book from the db 
 def delete_book_db(title):
@@ -39,6 +40,7 @@ def delete_book_db(title):
     WHERE title = ?
     ''', (title,))
     conn.commit()
+    print(f"Book '{title}' deleted successfully from the database.")
 
 # fetch to see all books in the db
 def view_books_db():
@@ -52,3 +54,16 @@ def view_books_db():
     for book in books:
         print(f"Title: {book[1]}, Author: {book[2]}, Price: {book[3]}, Quantity: {book[4]}")
         print("-" * 20)
+
+# search for a book in the db by its title
+def search_books_db(title):
+    cursor.execute('''
+    SELECT * FROM books
+    WHERE title = ?
+    ''', (title,))
+    found_books = cursor.fetchall()
+    if not found_books:
+        print(f"No books found with title '{title}'.")
+    else:
+        for book in found_books:
+            print(f"Title: {book[1]}, Author: {book[2]}, Price: {book[3]}, Quantity: {book[4]}")
