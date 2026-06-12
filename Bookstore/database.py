@@ -15,14 +15,13 @@ CREATE TABLE IF NOT EXISTS books (
 ''')
 conn.commit()
 print("Database created successfully.")
-# add athe book to the db 
+# add the book to the db 
 def add_book_db(title, author, price, quantity):
     cursor.execute('''
     INSERT INTO books (title, author, price, quantity)
     VALUES (?, ?, ?, ?)
     ''', (title, author, price, quantity))
     conn.commit()
-    print(f"Book '{title}' added successfully.")
 
 # update our book in the db 
 def update_book_db(title, new_title, new_author, new_price, new_quantity):
@@ -32,7 +31,6 @@ def update_book_db(title, new_title, new_author, new_price, new_quantity):
     WHERE title = ?
     ''', (new_title, new_author, new_price, new_quantity, title))
     conn.commit()
-    print(f"Book '{title}' updated successfully.")
 
 # delete the book from the db 
 def delete_book_db(title):
@@ -41,7 +39,6 @@ def delete_book_db(title):
     WHERE title = ?
     ''', (title,))
     conn.commit()
-    print(f"Book '{title}' deleted successfully.")
 
 # fetch to see all books in the db
 def view_books_db():
