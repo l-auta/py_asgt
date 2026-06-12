@@ -1,4 +1,4 @@
-from data import add_book, view_books, search_books, delete_book, update_book
+from data import add_book, search_books, delete_book, update_book
 from database import add_book_db, view_books_db, delete_book_db, update_book_db
 
 def main():
@@ -22,7 +22,6 @@ def main():
             add_book_db(title, author, price, quantity)
 
         elif choice == '2':
-            view_books()
             view_books_db()
 
         elif choice == '3':

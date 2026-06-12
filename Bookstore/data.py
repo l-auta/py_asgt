@@ -9,16 +9,17 @@ def add_book(title, author, price, quantity):
         'quantity': quantity
     }
     books.append(book)
-    print(f"Book '{title}' added successfully.")
+    print(f"\nBook '{title}' added successfully.")
 
 # function to view all books 
-def view_books():
-    if not books:
-        print("No books available.")
-        return
-    for book in books:
-        print(f"Title: {book['title']}, Author: {book['author']}, Price: {book['price']}, Quantity: {book['quantity']}")
-        print("-" * 20)
+# already being done by the db 
+# def view_books():
+#     if not books:
+#         print("No books available.")
+#         return
+#     for book in books:
+#         print(f"Title: {book['title']}, Author: {book['author']}, Price: {book['price']}, Quantity: {book['quantity']}")
+#         print("-" * 20)
 
 # function to get a book by its title 
 def search_books(title):
